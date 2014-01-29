@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+def tc_word(word)
+  short_articles = ["a", "an", "the"]
+  short_prepositions = ["on", "in", "to", "by", "for", "at", "of", "as", "off", "as", "out", "up" ]
+  short_conjunctions = [ "and", "but", "nor", "or", "yet", "so" ]
+  ignore = short_articles + short_prepositions + short_conjunctions
+
+  case word
+  when /[[:upper:]]/ 
+    word
+  when *ignore
+    word
+  else
+    word.sub(/^./){|first| first.upcase}
+  end
+end
+
+loop { case ARGV[0]
+  when /--/ then ARGV.shift; break
+  when /^-/ then usage("Unknown option: #{ARGV[0].inspect}")
+  else break
+end; }
+
+while gets() do
+    line = $_.chomp
+    puts line.split.map{|word| tc_word(word) }.join(' ')
+end   
