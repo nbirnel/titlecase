@@ -24,5 +24,8 @@ end; }
 
 while gets() do
     line = $_.chomp
-    puts line.split.map{|word| tc_word(word) }.join(' ')
+    tc_words =  line.split.map do |word|
+      tc_word(word) 
+    end
+    puts tc_words.join(' ')
 end   
