@@ -10,7 +10,6 @@ describe "tc_word" do
   #I think I have to write my own splitter. Or have tc_word do the wrapped 
   #punctuation handling?
   it "Ignores external apostrophes" do
-    pending
     tc_line("'thing'").should eq "'Thing'"
   end
 

@@ -12,7 +12,7 @@ def tc_word word
   when /[[:upper:]]/, *ignore
     word
   else
-    word.sub(/^./){|first| first.upcase}
+    word.sub(/^[^[:alpha:]]*[[:alpha:]]/){|first| first.upcase}
   end
 end
 
