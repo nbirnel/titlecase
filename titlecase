@@ -4,7 +4,9 @@ def tc_word(word)
   short_articles = ["a", "an", "the"]
   short_prepositions = ["on", "in", "to", "by", "for", "at", "of", "as", "off", "as", "out", "up" ]
   short_conjunctions = [ "and", "but", "nor", "or", "yet", "so" ]
-  ignore = short_articles + short_prepositions + short_conjunctions
+  # write my own splitter to get rid of this punctuation junk? No... do as regex?
+  abbrevs = ["re", "re:", "w/", "w", "etc.", "etc"]
+  ignore = short_articles + short_prepositions + short_conjunctions + abbrevs
 
   case word
   when /[[:upper:]]/, *ignore
