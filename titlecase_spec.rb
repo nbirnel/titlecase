@@ -10,24 +10,16 @@ describe "tc_word" do
   #I think I have to write my own splitter. Or have tc_word do the wrapped 
   #punctuation handling?
   it "Ignores external apostrophes" do
-    tc_line("'thing'").should eq "'Thing'"
+    tc_word("'thing'").should eq "'Thing'"
   end
 
   it "sees internal apostrophes" do
-    tc_line("don't").should eq "Don't"
-  end
-
-  it "ignores camelcase" do
-    tc_line("iPhone"). should eq "iPhone"
-  end
-
-  it "ignores short preposition, conjunction, and articles" do
-    tc_line("to"). should eq "to"
+    tc_word("don't").should eq "Don't"
   end
 
   it "Ignores external apostrophes in exceptions" do
     pending
-    tc_line("'to'").should eq "'to'"
+    tc_word("'to'").should eq "'to'"
   end
 
 end
@@ -37,13 +29,15 @@ describe "tc_line" do
     tc_line("do it").should eq "Do It"
   end
 
+  it "ignores short preposition, conjunction, and articles in middle " do
+    tc_line("go to"). should eq "Go to"
+  end
+
   it "capitalizes the first word even it it's on the ignore list" do
-    pending
     tc_line("to France").should eq "To France"
   end
 
   it "but doesn't capitalize the first word if it's camelcased" do
-    pending
     tc_line("eTrade is still around").should eq "eTrade Is Still Around"
   end
 
@@ -51,4 +45,12 @@ describe "tc_line" do
     tc_line("shazam! what? don't go, young man...").should eq "Shazam! What? Don't Go, Young Man..."
   end
 
+  it "ignores mixed case even as first word" do
+    tc_line("iPhone").should eq "iPhone"
+  end
+
+  it "doesn't falsely capitalize Dutch abbreviations" do
+    pending
+    tc_line("Mr 't Horne went to 's Grave").should eq "Mr 't Horne went to 's Grave"
+  end
 end
