@@ -37,6 +37,16 @@ describe "tc_line" do
     tc_line("do it").should eq "Do It"
   end
 
+  it "capitalizes the first word even it it's on the ignore list" do
+    pending
+    tc_line("to France").should eq "To France"
+  end
+
+  it "but doesn't capitalize the first word if it's camelcased" do
+    pending
+    tc_line("eTrade is still around").should eq "eTrade Is Still Around"
+  end
+
   it "retains punctuation" do
     tc_line("shazam! what? don't go, young man...").should eq "Shazam! What? Don't Go, Young Man..."
   end
