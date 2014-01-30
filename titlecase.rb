@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-def tc_word word
+def tc_word word, override_ignores = 1
   short_articles = ["a", "an", "the"]
   short_prepositions = ["on", "in", "to", "by", "for", "at", "of", "as", "off", "as", "out", "up" ]
   short_conjunctions = [ "and", "but", "nor", "or", "yet", "so" ]
@@ -17,8 +17,8 @@ def tc_word word
 end
 
 def tc_line line
-  tc_words =  line.split.map do |word|
-    tc_word(word) 
+  tc_words =  line.split.map.with_index do |word, index|
+    tc_word(word, index) 
   end
   tc_words.join(' ')
 end
