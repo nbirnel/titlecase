@@ -1,17 +1,19 @@
 #!/usr/bin/env ruby
 
-def tc_word word, override_ignores = 1
+def tc_word word, index = 1
   short_articles = ["a", "an", "the"]
   short_prepositions = ["on", "in", "to", "by", "for", "at", "of", "as", "off", "as", "out", "up" ]
   short_conjunctions = [ "and", "but", "nor", "or", "yet", "so" ]
   # write my own splitter to get rid of this punctuation junk? No... do as regex?
   abbrevs = ["re", "re:", "w/", "w", "etc.", "etc"]
-  ignore = short_articles + short_prepositions + short_conjunctions + abbrevs
+  ignore_these = short_articles + short_prepositions + short_conjunctions + abbrevs
 
   case word
   when /[[:upper:]]/
     word
-  when *ignore
+  when { index == 0 }
+    word.sub(/^[^[:alpha:]]*[[:alpha:]]/){|first| first.upcase}
+  when *ignore_these
     word
   else
     word.sub(/^[^[:alpha:]]*[[:alpha:]]/){|first| first.upcase}
