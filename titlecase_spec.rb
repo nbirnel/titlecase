@@ -25,6 +25,11 @@ describe "tc_word" do
     tc_line("to"). should eq "to"
   end
 
+  it "Ignores external apostrophes in exceptions" do
+    pending
+    tc_line("'to'").should eq "'to'"
+  end
+
 end
 
 describe "tc_line" do
