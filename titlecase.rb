@@ -9,7 +9,9 @@ def tc_word word, override_ignores = 1
   ignore = short_articles + short_prepositions + short_conjunctions + abbrevs
 
   case word
-  when /[[:upper:]]/, *ignore
+  when /[[:upper:]]/
+    word
+  when *ignore
     word
   else
     word.sub(/^[^[:alpha:]]*[[:alpha:]]/){|first| first.upcase}
