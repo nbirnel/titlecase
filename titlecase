@@ -7,9 +7,7 @@ def tc_word(word)
   ignore = short_articles + short_prepositions + short_conjunctions
 
   case word
-  when /[[:upper:]]/ 
-    word
-  when *ignore
+  when /[[:upper:]]/, *ignore
     word
   else
     word.sub(/^./){|first| first.upcase}
