@@ -1,6 +1,7 @@
-require "#{File.dirname(__FILE__)}/titlecase"
+require "./titlecase"
 
-string = "don't stop thinking about AT&T 't Horne McDonald iPhone globular"
+#FIXME can't seem to do the fancy ruby native relative path thing
+# without naming our program titlecase.rb, which I don't want
 
 describe "tc_word" do
   it "titlecases a single word" do
