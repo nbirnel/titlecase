@@ -1,21 +1,35 @@
 .TH titlecase 1 titlecase\-0.0.1
 .SH NAME
-titlecase \- !DESCRIPTION!
+titlecase \- capitalize a phrase like a newspaper editor would
 .SH SYNOPSIS
-.B titlecase !USAGE!
+.B titlecase [FILE]
 .SH DESCRIPTION
 .B titlecase
-!WHAT IT DOES!
+converts a byte\(hystream to title\(hycasing \(em 
+the first letter of most words is converted to upper\(hycase.
+Exceptions are:
+.IP
+words that already have some capitalization (Jones, AT&T, iPhone)
+.IP
+a list of short (less than 4 characters) 
+conjunctions, prepositions, and articles;
+unless they are at the beginning of the byte\(hystream
+
 .SH OPTIONS
 none
 .SH EXAMPLES
-.B titlecase 
-!INVOCATIONS!
-.SH FILES
+.IP
+.B echo 'old McDonald had a farm' | titlecase 
+.IP
+Old McDonald Had a Farm
 .SH SEE ALSO
+.B ruby(1)
 .SH BUGS
-Probably.
+Doesn't handle quoted bits correctly. 
+Capitalizes Dutch abbreviations
+.B 's, 't, 'n.
+Probably others.
 .SH LICENSE
-Copyright 2014 
+Copyright 2014 Noah Birnel
 .sp
 You may use this software however you like.
