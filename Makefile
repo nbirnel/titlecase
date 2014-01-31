@@ -23,7 +23,7 @@ clean ::
 	rm -r ${PROG}.ps
 
 test :: ${PROG}.rb ${PROG}_spec.rb
-	rspec ${PROG}_spec.rb
+	rspec --color ${PROG}_spec.rb
 
 remove ::
 	rm -f ${DESTDIR}${PREFIX}/bin/${PROG}
