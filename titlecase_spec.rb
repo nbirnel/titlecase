@@ -8,8 +8,6 @@ describe "tc_word" do
     tc_word("foo").should eq "Foo"
   end
   
-  #I think I have to write my own splitter. Or have tc_word do the wrapped 
-  #punctuation handling?
   it "Ignores external apostrophes" do
     tc_word("'thing'").should eq "'Thing'"
   end
