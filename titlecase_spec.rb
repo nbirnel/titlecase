@@ -16,11 +16,6 @@ describe "tc_word" do
     tc_word("don't").should eq "Don't"
   end
 
-  it "Ignores external apostrophes in exceptions" do
-    pending
-    tc_word("'to'").should eq "'to'"
-  end
-
 end
 
 describe "tc_line" do
@@ -38,6 +33,10 @@ describe "tc_line" do
 
   it "but doesn't capitalize the first word if it's camelcased" do
     tc_line("eTrade is still around").should eq "eTrade Is Still Around"
+  end
+
+  it "Ignores external apostrophes in exceptions" do
+    tc_line("don't go 'to' Chicago").should eq "Don't Go 'to' Chicago"
   end
 
   it "retains punctuation" do
