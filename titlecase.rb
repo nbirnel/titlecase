@@ -12,13 +12,13 @@ def tc_line line
   # around the words and still catch them. How, then, will I exclude the 
   # Dutch abbreviations? That is a very obscure corner case, so I will ignore
   # it for the moment.
-  articles = "(a)|(an)|(the)"
-  prepositions = "(on)|(in)|(to)|(by)|(for)|(at)|(of)|(as)|(off)|(as)|(out)|(up)"
-  conjunctions = "(and)|(but)|(nor)|(or)|(yet)|(so)"
-  abbrevs = "(re)|(w)|(etc)"
-  ignore_raw = [articles, prepositions, conjunctions, abbrevs].join('|')
-  wrap = "[^[:alpha:]]*"
-  ignore = Regexp.new('^' + wrap + '(' + ignore_raw + ')' + wrap + '$')
+  art = "(a)|(an)|(the)"
+  prep = "(on)|(in)|(to)|(by)|(for)|(at)|(of)|(as)|(off)|(as)|(out)|(up)"
+  conj = "(and)|(but)|(nor)|(or)|(yet)|(so)"
+  abbr = "(re)|(w)|(etc)"
+  ignore_raw = '(' + [art, prep, conj, abbr].join('|') + ')'
+  punct_wrap = "[^[:alpha:]]*"
+  ignore = Regexp.new('^' + punct_wrap + ignore_raw + punct_wrap + '$')
 
   # I had to draw myself a chart to get this right:
   #|--------------
