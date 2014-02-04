@@ -7,11 +7,8 @@ def tc_word word, index = 1
 end
 
 def tc_line line
-  #FIXME
-  # I think these will end up being a regex object so I can wrap punctuation
-  # around the words and still catch them. How, then, will I exclude the 
-  # Dutch abbreviations? That is a very obscure corner case, so I will ignore
-  # it for the moment.
+  # How will I exclude the Dutch abbreviations? That is a very obscure corner
+  # case, so I will ignore it for the moment.
   art = "(a)|(an)|(the)"
   prep = "(on)|(in)|(to)|(by)|(for)|(at)|(of)|(as)|(off)|(as)|(out)|(up)"
   conj = "(and)|(but)|(nor)|(or)|(yet)|(so)"
