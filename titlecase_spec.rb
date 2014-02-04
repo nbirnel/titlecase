@@ -24,7 +24,11 @@ describe "tc_line" do
   end
 
   it "ignores short preposition, conjunction, and articles in middle " do
-    tc_line("go to"). should eq "Go to"
+    tc_line("go to").should eq "Go to"
+  end
+
+  it "ignores 'words' with mixed numbers" do
+    tc_line("buy me a x0xb0x").should eq "Buy Me a x0xb0x"
   end
 
   it "capitalizes the first word even it it's on the ignore list" do

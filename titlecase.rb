@@ -31,7 +31,7 @@ def tc_line line
   #
   # but this is the cleanest way I could think of to represent it in code.
   tc_words =  line.split.map.with_index do |word, index|
-    (word =~ /[[:upper:]]/) || ( index > 0 && ignore.match(word)) \
+    (word =~ /[[:upper:][:digit:]]/) || ( index > 0 && ignore.match(word)) \
       ? word \
       : tc_word(word)
   end
