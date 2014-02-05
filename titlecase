@@ -15,7 +15,7 @@ def tc_line line
   #Daring Fireball says NY Times Manual of Style says "en"
   conj = "(and)|(but)|(nor)|(or)|(yet)|(so)"
   abbr = "(re)|(w)|(etc)|(v)|(vs)"
-  ignore_raw = '(' + [art, prep, conj, abbr].join('|') + ')'
+  ignore_raw = '(' + [art, prep, part, conj, abbr].join('|') + ')'
   punct_wrap = "[^[:alpha:]]*"
   ignore = Regexp.new('^' + punct_wrap + ignore_raw + punct_wrap + '$')
 
