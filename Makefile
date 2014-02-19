@@ -30,7 +30,7 @@ pdf :: ${PROG}.1
 	ps2pdf ${NAME}.ps
 
 clean ::
-	rm -f ${NAME}.ps ${NAME}.pdf ${GEM}
+	rm -fr ${NAME}.ps ${NAME}.pdf ${GEM} doc/
 
 test :: ${LIB} ${TEST}
 	rspec --color ${TEST}
