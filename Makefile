@@ -1,5 +1,7 @@
 PREFIX = /usr/local
-PROG = titlecase
+PROG = title_case
+SPEC = spec/${PROG}_spec.rb
+LIB  = lib/${PROG}.rb
 
 install :: ${PROG} ${PROG}.1
 	mkdir -p ${DESTDIR}${PREFIX}/bin
@@ -16,8 +18,8 @@ pdf :: ${PROG}.1
 clean ::
 	rm -f ${PROG}.ps ${PROG} ${PROG}.pdf
 
-test :: ${PROG} ${PROG}_spec.rb
-	rspec --color ${PROG}_spec.rb
+test :: ${LIB} ${SPEC}
+	rspec --color ${SPEC}
 
 remove ::
 	rm -f ${DESTDIR}${PREFIX}/bin/${PROG}
