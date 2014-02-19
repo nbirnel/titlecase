@@ -36,7 +36,7 @@ Major differences are:
 License
 ---------
 © 2014 Noah Birnel
-Do whatever you want to with this code.
+MIT license 
 
 
 
