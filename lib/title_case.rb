@@ -1,10 +1,18 @@
 class String
+  ##
+  # title_case_word upcases the first alpha character in a string.
 
   def title_case_word
     # the non-alpha beginning lets us capitalize "'the'" to "'The'",
     self.sub(/^[^[:alpha:]]*[[:alpha:]]/){|first| first.upcase}
   end
 
+  ##
+  # title_case_line capitalizes each 'word' in a string,
+  # except for words which already have an upper case letter somewhere in them,
+  # and except for short articles, prepositions, conjugations and abbreviations
+  # which are not the first word of the string.
+  
   def title_case_line
     art  = "(a)|(an)|(the)"
     prep = "(on)|(in)|(to)|(by)|(for)|(at)|(of)|(as)|(off)|(as)|(out)|(up)"
