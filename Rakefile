@@ -2,7 +2,7 @@ require 'rspec/core/rake_task'
 require 'rake/clean'
 RSpec::Core::RakeTask.new('spec')
 
-VER  = '0.2.1'
+VER  = '0.2.2'
 PROG = 'title_case'
 NAME = 'titlecase'
 LIB  = FileList['lib/*.rb']
