@@ -1,6 +1,4 @@
-#!/usr/bin/env ruby
-
-def titlecase_word word, index = 1
+def titlecase_word word
   # the non-alpha beginning lets us capitalize "'the'" to "'The'",
   word.sub(/^[^[:alpha:]]*[[:alpha:]]/){|first| first.upcase}
 end
