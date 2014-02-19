@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require title_case
+require 'title_case'
 
 # Boilerplate for adding flags.
 loop { case ARGV[0]
@@ -11,6 +11,6 @@ end; }
 
 while gets() do
   line = $_.chomp
-  tced = titlecase_line line
+  tced = line.title_case_line
   puts tced
 end   
