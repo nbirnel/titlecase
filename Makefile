@@ -21,6 +21,9 @@ install-man :: ${NAME}.1
 ${GEM} :: ${LIB} ${BIN} ${SPEC}
 	gem build ${SPEC}
 
+push :: ${GEM}
+	gem push $<
+
 pdf :: ${PROG}.1
 	man -t ./${NAME}.1 > ${NAME}.ps
 	ps2pdf ${NAME}.ps
