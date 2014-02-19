@@ -23,11 +23,11 @@ Inspiration and History
 This is partially inspired and informed by John Gruber's titlecase: 
 <http://daringfireball.net/2008/05/title_case>
 and Sam Souder's ruby implementation:
-FIXME
+<https://github.com/samsouder/titlecase>
 
 I didn't like a few of the rules in Gruber's version, though.
 Major differences are:
-  - don't ever dowcase anything
+  - don't ever downcase anything
   - the last word doesn't get upcased if it is on the exclude list
   - the exclude list is slightly different
   - colons get no special treatment
