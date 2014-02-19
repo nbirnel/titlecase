@@ -26,18 +26,22 @@ task :push do
 end
 
 task :clean do
-end
-
-task :clean do
-  file_helper('doc') { rmdir_recurse('doc') }
+  gems = Dir['*.gem']
+  ['doc', gems,].flatten.each do |cleanme|
+    file_helper(cleanme) { |cleanme| rm_recurse(cleanme) }
+  end
 end
 
 def file_helper file 
-  { yield } if File.exists? file 
+  yield file if File.exists? file 
 end
 
 def rm_recurse file
-  File.file? file ? File.delete(file) : rmdir_recurse file
+  if File.file?(file) 
+    File.delete(file) 
+  else 
+    rmdir_recurse file
+  end
 end
 
 def rmdir_recurse dir
