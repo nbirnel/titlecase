@@ -1,4 +1,4 @@
-load  "#{File.dirname(__FILE__)}/titlecase"
+load  "#{File.dirname(__FILE__)}/../lib/title_case.rb"
 
 #FIXME can't seem to do the fancy ruby native relative path thing
 # without naming our program titlecase.rb, which I don't want
