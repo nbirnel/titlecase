@@ -1,6 +1,16 @@
 require 'rspec/core/rake_task'
-
+require 'rake/clean'
 RSpec::Core::RakeTask.new('spec')
+
+PROG = 'title_case'
+NAME = 'titlecase'
+LIB  = FileList['lib/*.rb']
+BIN  = FileList['bin/*.rb']
+TEST = FileList['spec/*.rb']
+MAN  = FileList['man/man*/*.?']
+SPEC = "#{PROG}.gemspec"
+CLEAN.include('doc', '*.gem')
+MANDIR = '/usr/local/man/man1/'
 
 task :all => [:spec, :install]
 
@@ -10,7 +20,7 @@ task :test => :spec
 
 task :spec 
 
-task :doc  do
+file 'doc' => LIB  do
   `rdoc lib/title_case.rb`        #FIXME this is not the canonical way to do it
 end
 
@@ -20,31 +30,10 @@ task :install_bins do
 end
 
 task :install_man do
+  mkdir_p MANDIR
+  cp MAN, MANDIR
 end
 
 task :push do
 end
 
-task :clean do
-  gems = Dir['*.gem']
-  ['doc', gems,].flatten.each do |cleanme|
-    file_helper(cleanme) { |cleanme| rm_recurse(cleanme) }
-  end
-end
-
-def file_helper file 
-  yield file if File.exists? file 
-end
-
-def rm_recurse file
-  if File.file?(file) 
-    File.delete(file) 
-  else 
-    rmdir_recurse file
-  end
-end
-
-def rmdir_recurse dir
-  Dir[dir + '/*'].each {|f| rm_recurse f} 
-  Dir.rmdir dir
-end
