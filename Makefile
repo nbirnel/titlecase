@@ -1,4 +1,4 @@
-VER    = 0.1.1
+VER    = 0.2.0
 PREFIX = /usr/local
 
 PROG   = title_case
@@ -9,13 +9,14 @@ BIN    = bin/${NAME}
 TEST   = spec/${PROG}_spec.rb
 GEM    = ${PROG}-${VER}.gem
 SPEC   = ${PROG}.gemspec
+MAN    = man/man1/${NAME}.1
 
 install :: ${GEM}
 	gem install ./${GEM}
 
-install-man :: ${NAME}.1
+install-man :: ${MAN}
 	mkdir -p ${DESTDIR}${PREFIX}/man/man1
-	cp -f ${NAME}.1 ${DESTDIR}${PREFIX}/man/man1
+	cp -f ${MAN} ${DESTDIR}${PREFIX}/man/man1
 	chmod 644 ${DESTDIR}${PREFIX}/man/man1/${NAME}.1
 
 ${GEM} :: ${LIB} ${BIN} ${SPEC}
@@ -25,7 +26,7 @@ push :: ${GEM}
 	gem push $<
 
 pdf :: ${PROG}.1
-	man -t ./${NAME}.1 > ${NAME}.ps
+	man -t ./${MAN} > ${NAME}.ps
 	ps2pdf ${NAME}.ps
 
 clean ::
