@@ -11,7 +11,7 @@ TEST = FileList['spec/*.rb']
 MAN  = FileList['man/man*/*.?']
 MANFILE = "#{NAME}.1"
 SPEC = "#{PROG}.gemspec"
-GEM  = "#{NAME}-#{VER}.gem"
+GEM  = "#{PROG}-#{VER}.gem"
 CLEAN.include('doc', '*.gem')
 MANDIR = '/usr/local/man/man1/'
 MANDEST = [MANDIR, MANFILE].join '/'
@@ -28,7 +28,9 @@ file 'doc' => LIB  do
   `rdoc lib/title_case.rb`        #FIXME shell out not cool
 end
 
-file GEM  => [LIB, BIN, TEST, MAN, SPEC] do
+task :gem => GEM
+
+file GEM => [LIB, BIN, TEST, MAN, SPEC].flatten do
   `gem build #{SPEC}`            #FIXME shell out not cool
 end
 
@@ -43,7 +45,7 @@ task :install_man => MAN do
   cp MAN, MANDIR
 end
 
-task :push => GEM do
+task :push => :gem do
   `gem push #{GEM}`            #FIXME shell out not cool
 end
 
