@@ -17,6 +17,14 @@ Command Line Usage:
 
   Capitalize a Phrase Like a Newspaper Editor Would
 
+Installation
+---------
+
+The github page is for development.
+To install, do:
+  
+  $ gem install title_case
+
 Inspiration and History
 ---------
 
