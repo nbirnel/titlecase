@@ -1,7 +1,4 @@
-load  "#{File.dirname(__FILE__)}/../lib/title_case.rb"
-
-#FIXME can't seem to do the fancy ruby native relative path thing
-# without naming our program title_case.rb, which I don't want
+require  "#{File.dirname(__FILE__)}/../lib/title_case"
 
 describe "title_case_word" do
   it "title_cases a single word" do
