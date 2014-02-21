@@ -41,8 +41,8 @@ task :install_gem => GEM do
 end
 
 task :install_man => MAN do
-  #mkdir_p MANDIR
-  #cp MAN, MANDIR
+  mkdir_p MANDIR
+  cp MAN, MANDIR
 end
 
 task :push => :gem do
@@ -51,5 +51,5 @@ end
 
 task :uninstall do
   `gem uninstall #{PROG}`     #FIXME shell out not cool
-  #File.delete MANDEST
+  File.delete MANDEST
 end
