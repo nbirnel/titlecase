@@ -45,7 +45,11 @@ task :install_man => MAN do
   cp MAN, MANDIR
 end
 
-task :push => :gem do
+task :push do
+  `git push origin master`            #FIXME shell out not cool
+end
+
+task :publish => :gem do
   `gem push #{GEM}`            #FIXME shell out not cool
 end
 
