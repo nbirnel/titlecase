@@ -4,26 +4,36 @@ title_case
 A ruby gem consisting of String methods to title case strings,
 including a command-line demonstration utility.
 
-Method Usage:
-
-  require 'rubygems'
-  require 'title_case'
-
-  FIXME this is not done yet.
-
 Command Line Usage:
 
-  $ echo capitalize a phrase like a newspaper editor would  | titlecase
+    echo capitalize a phrase like a newspaper editor would  | titlecase
 
-  Capitalize a Phrase Like a Newspaper Editor Would
+    Capitalize a Phrase Like a Newspaper Editor Would
 
 Installation
 ---------
+`gem install title_case`
 
-The github page is for development.
-To install, do:
-  
-  $ gem install title_case
+or, if you want the latest and the greatest, 
+or if you want the man page installed:
+
+    git clone https://github.com/titlecase
+    cd titlecase
+    rake install
+
+(use `sudo` as necessary)
+
+Runtime Requirements
+---------
+ruby 
+
+Build Requirements
+---------
+rake
+
+Developer Requirements
+---------
+groff
 
 Inspiration and History
 ---------
@@ -47,5 +57,5 @@ License
 MIT license 
 
 
-
-
+Man page
+---------
