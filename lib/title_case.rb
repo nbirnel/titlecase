@@ -1,3 +1,22 @@
+module TitleCase
+
+  class Version
+    MAJOR = 0 
+    MINOR = 2 
+    PATCH = 5 
+
+    class << self
+      def to_s
+        [MAJOR, MINOR, PATCH].join('.')
+      end
+    end
+  end
+
+  VERSION = Version.to_s
+
+end
+
+
 class String
   ##
   # title_case_word upcases the first alpha character in a string.
