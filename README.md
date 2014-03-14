@@ -141,7 +141,8 @@ Had a Farm</p>
 </h2>
 
 
-<p style="margin-left:11%; margin-top: 1em"><i>ruby(1) <br>
+<p style="margin-left:11%; margin-top: 1em"><b>ruby(1)</b>
+<i><br>
 http://daringfireball.net/2008/05/title_case <br>
 http://rubygems.org/gems/titlecase</i></p>
 
