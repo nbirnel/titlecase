@@ -52,6 +52,7 @@ MIT license
 
 [![Build Status](https://travis-ci.org/nbirnel/titlecase.png?branch=master)](https://travis-ci.org/nbirnel/titlecase)
 [![Code Climate](https://codeclimate.com/github/nbirnel/titlecase.png)](https://codeclimate.com/github/nbirnel/titlecase)
+[![Gem Version](https://badge.fury.io/rb/title_case.png)](http://badge.fury.io/rb/title_case)
 
 
 Man page
