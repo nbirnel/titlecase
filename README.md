@@ -4,12 +4,6 @@ title_case
 A ruby gem consisting of String methods to title case strings,
 including a command-line demonstration utility.
 
-Command Line Usage:
-
-    echo capitalize a phrase like a newspaper editor would  | titlecase
-
-    Capitalize a Phrase Like a Newspaper Editor Would
-
 Installation
 ---------
 `gem install title_case`
@@ -55,6 +49,9 @@ License
 ---------
 © 2014 Noah Birnel
 MIT license 
+
+[![Build Status](https://travis-ci.org/nbirnel/titlecase.png?branch=master)](https://travis-ci.org/nbirnel/titlecase)
+[![Code Climate](https://codeclimate.com/github/nbirnel/titlecase.png)](https://codeclimate.com/github/nbirnel/titlecase)
 
 
 Man page
