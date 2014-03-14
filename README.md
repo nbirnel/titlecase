@@ -11,7 +11,7 @@ Installation
 or, if you want the latest and the greatest, 
 or if you want the man page installed:
 
-    git clone https://github.com/titlecase
+    git clone https://github.com/nbirnel/titlecase
     cd titlecase
     rake install
 
