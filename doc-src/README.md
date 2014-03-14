@@ -19,7 +19,7 @@ or if you want the man page installed:
 
 Runtime Requirements
 ---------
-ruby 
+ruby >= 1.9.2
 
 Build Requirements
 ---------
