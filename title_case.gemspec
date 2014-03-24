@@ -4,6 +4,7 @@ Gem::Specification.new do |s|
   s.name        = 'title_case'
   s.version     = TitleCase::VERSION
   s.date        = '2014-03-14'
+  s.required_ruby_version = '>=1.9.2'
   s.summary     = 'String Methods and CLI to Properly Title Case a Headline.'
   s.description = "title_case is a set of Ruby String methods for title casing,
                     and a command-line utility using those methods. Not to be 
